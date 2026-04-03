@@ -15,3 +15,10 @@ module "lambda_function" {
     Date = timestamp()
   }
 }
+
+module "s3_bucket" {
+  source        = "terraform-aws-modules/s3-bucket/aws"
+  count         = var.should_deploy ? 1 : 0
+  bucket        = "aws-laravel-functions-bucket"
+  force_destroy = true
+}
