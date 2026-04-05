@@ -1,8 +1,8 @@
-variable "should_deploy" {
-  type    = bool
-  default = false
+variable "project_name" {
+  type = string
 }
 
-variable "trusted_repository" {
-  type = string
+variable "docker_image_tag" {
+  type    = string
+  default = "latest"
 }
